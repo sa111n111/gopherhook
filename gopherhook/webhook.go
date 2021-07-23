@@ -11,21 +11,20 @@ import (
 // Another thing to note is that you will not submit your webhook token,
 // we use the raw url of the webhook to send the request.
 type Webhook struct {
-	// Content is the message contents you'd like the webhook to send.
+	// Content is the message you'd like to send via webhook
 	Content string
 
-	// Username Overrides the default username of the webhook
+	// Username overrides the default username of the webhook
 	Username string
 
-	// AvatarUrl Overrides the default avatar of the webhook
+	// AvatarUrl overrides the default avatar of the webhook
 	AvatarUrl string
 
 	// TTS If the message is text-to-speech or not.
 	TTS bool
 }
 
-// NewWebhook creates a new webhook object.
-// Takes in the same arguments as the Webhook struct.
+// NewWebhook creates a new webhook object. requires the same arguments as the Webhook struct.
 func (w *Webhook) NewWebhook(content string, username string, avatar_url string, tts bool) Webhook {
 	return Webhook{
 		Content:   content,
@@ -35,7 +34,7 @@ func (w *Webhook) NewWebhook(content string, username string, avatar_url string,
 	}
 }
 
-// Execute sends a message in a channel from a webhook.
+// Execute sends a message via a webhook to a target channel.
 // Takes in the raw `URL` of the webhook for convenience.
 // This assumes you've already provided the fields needed in the webhook struct.
 func (w *Webhook) Execute(url string) {
