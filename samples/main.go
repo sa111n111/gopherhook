@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gopherhook/gopherhook"
+	"github.com/sal1entx86/gopherhook"
 )
 
 func main() {
