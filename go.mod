@@ -1,3 +1,3 @@
-module github.com/sal1entx86/gopherhook
+module github.com/sa111n111/gopherhook
 
 go 1.16
